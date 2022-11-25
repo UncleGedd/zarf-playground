@@ -6,7 +6,7 @@ metadata:
 spec:
   url: https://github.com/UncleGedd/zarf-playground
   ref:
-    branch: main
+    branch: 0.0.1
   interval: 1m
 ---
 apiVersion: source.toolkit.fluxcd.io/v1beta2
@@ -27,7 +27,7 @@ metadata:
   namespace: zarf-playground
 spec:
   interval: 1m0s
-  path: "./"
+  path: "./upgrade-testing/podinfo"
   sourceRef:
     kind: GitRepository
     name: zarf-playground

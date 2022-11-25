@@ -1,0 +1,20 @@
+kind: ZarfPackageConfig
+metadata:
+  name: upgrade-test
+  description: "Deploy Batcave Utility Belt"
+  architecture: arm64 # eks is amd64
+
+#variables:
+#  # Prompt user for the domain override
+#  - name: DOMAIN
+#    default: "batcave-dev.internal.cms.gov"
+
+components:
+  - name: upgrade-test
+    required: true
+    namespace: batcave
+    manifests:
+      - name: podinfo
+        namespace: podinfo
+        files:
+          - podinfo/podinfo-install.yaml
