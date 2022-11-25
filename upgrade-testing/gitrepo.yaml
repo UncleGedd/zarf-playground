@@ -19,3 +19,17 @@ spec:
   ref:
     tag: 6.2.3
   interval: 1m
+---
+apiVersion: kustomize.toolkit.fluxcd.io/v1beta2
+kind: Kustomization
+metadata:
+  name: podinfo
+  namespace: zarf-playground
+spec:
+  interval: 1m0s
+  path: "./"
+  sourceRef:
+    kind: GitRepository
+    name: zarf-playground
+    namespace: zarf-playground
+  prune: true

@@ -18,4 +18,4 @@ spec:
     replicaCount: 1
     ui:
       color: "#34577c"
-      message: "Hello podinfo"
+      message: "Hello world"
