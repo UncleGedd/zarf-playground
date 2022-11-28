@@ -2,6 +2,7 @@ kind: ZarfPackageConfig
 metadata:
   name: upgrade-test
   architecture: arm64
+  yolo: true
 
 components:
   - name: upgrade-test
@@ -10,5 +11,10 @@ components:
     manifests:
       - name: podinfo
         namespace: podinfo
-        files:
-          - podinfo/podinfo-install.yaml
+        files: # not sure what this does...k apply -f <file> ? No, it creates a Helm chart under the hood
+            - podinfo/podinfo-install.yaml # can this be a remote file? Not yet
+
+
+#todo: issue: make files accept remote files
+
+#notes: zarf-agent redirects requests; `files`: creates a Helm chart under the hood and installs it
